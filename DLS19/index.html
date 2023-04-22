@@ -59,6 +59,21 @@
                     Đôi
                 </option>
             </select>
+        </p>
+            <p>Card Type
+            <select id="cardType">
+                <option selected value="legendary">
+                    Legendary
+                </option>
+                <option value="rare">
+                    Rare
+                </option>
+                <option value="common">
+                    Common
+                </option>
+            </select>
+            Maxed
+            <input id="maxed" type="checkbox" onchange="clearCard();">
             Chiều Cao
             <input id="height" max="999" min="1" type="number" value="171">
         </p>
