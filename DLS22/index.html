@@ -125,39 +125,7 @@
             <input id="stats6" max="100" min="1" type="number" value="58">
             <input id="stats7" max="100" min="1" type="number" value="92">
             <input id="stats8" max="100" min="1" type="number" value="91">
-            <script>
-function generateStats() {
-  var ovr = document.getElementById('rating').value;
-  var total = 0;
-  var stats = [];
-
-  for (var i = 0; i < 8; i++) {
-    var stat = Math.floor(Math.random() * 11) + 69;
-    if (i >= 0 && i <= 3) {
-      stat = Math.floor(Math.random() * 11) + 59;
-    } else {
-      stat = Math.floor(Math.random() * 11) + 79;
-    }
-    stats.push(stat);
-    total += stat;
-  }
-
-  var ratio = ovr / total;
-  for (var i = 0; i < 8; i++) {
-    stats[i] = Math.round(stats[i] * ratio);
-  }
-
-  document.getElementById('stats1').value = stats[0];
-  document.getElementById('stats2').value = stats[1];
-  document.getElementById('stats3').value = stats[2];
-  document.getElementById('stats4').value = stats[3];
-  document.getElementById('stats5').value = stats[4];
-  document.getElementById('stats6').value = stats[5];
-  document.getElementById('stats7').value = stats[6];
-  document.getElementById('stats8').value = stats[7];
-}
-</script>
-        </p>
+           </p>
         <p>Ảnh
             <select id="playerID"></select>
             <input accept="image/gif, image/jpeg, image/png" type="file" id="uploadImage" />
