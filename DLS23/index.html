@@ -120,9 +120,19 @@
             Quốc Tịch <a href="https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md"
                 target="_blank"><sup>(?)</sup></a>
             <select id="nationality"></select>
+<script>
+  const nationalitySelect = document.getElementById('nationality');
+  const nationalityLogo = document.getElementById('nationalityLogo');
+
+  nationalitySelect.addEventListener('change', () => {
+    const selectedNationality = nationalitySelect.value;
+    const flagUrl = `https://github.com/theshinramen/DLS-Files/raw/main/flags/${selectedNationality}.png`;
+    nationalityLogo.src = flagUrl;
+  });
+</script>
         </p>
         <p>
-            Stats
+            Chỉ Số
             <input id="stats1" max="100" min="1" type="number" value="80">
             <input id="stats2" max="100" min="1" type="number" value="87">
             <input id="stats3" max="100" min="1" type="number" value="77">
