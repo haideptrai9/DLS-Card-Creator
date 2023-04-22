@@ -122,14 +122,41 @@
             <select id="nationality"></select>
 <script>
   const nationalitySelect = document.getElementById('nationality');
-  const nationalityLogo = document.getElementById('nationalityLogo');
+  const nationalityLogo = document.getElementById('nationality-logo');
+  const imageForm = document.getElementById('image-form');
+  const imageInput = document.getElementById('flag-image');
 
+  // Update the nationality logo when a different option is selected
   nationalitySelect.addEventListener('change', () => {
     const selectedNationality = nationalitySelect.value;
     const flagUrl = `https://github.com/theshinramen/DLS-Files/raw/main/flags/${selectedNationality}.png`;
     nationalityLogo.src = flagUrl;
   });
+
+  // Upload image when form is submitted
+  imageForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the page from refreshing
+    const file = imageInput.files[0];
+    const formData = new FormData();
+    formData.append('image', file);
+    // Replace "upload.php" with the URL of your server-side script that handles file uploads
+    fetch('upload.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      const imageUrl = data.imageUrl;
+      nationalityLogo.src = imageUrl;
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Error uploading image');
+    });
+  });
 </script>
+
         </p>
         <p>
             Chỉ Số
