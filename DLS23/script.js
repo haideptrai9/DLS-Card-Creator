@@ -72,7 +72,7 @@ function drawCard() {
         template: `./assets/card/${value('cardType')}${value('position') == 'GK' ? 'GK' : ''}.png`, // ${checked('maxed') ? 'maxed/' : ''}
         positionImage: `./assets/position/${value('position')}.png`,
         playerImage: `https://raw.githubusercontent.com/theshinramen/DLS-Files/main/playerphotos/DLS23/${value('playerID')}.png`,
-        flagImage: `https://raw.githubusercontent.com/theshinramen/DLS-Files/main/flags/{value('nationality')}.png`,
+        flagImage: `https://raw.githubusercontent.com/theshinramen/DLS-Files/main/flags/${value('nationality')}.png`,
         // starImage: './assets/card/maxed/star/red.png'
     };
 
