@@ -125,21 +125,7 @@
             <input id="stats6" max="100" min="1" type="number" value="58">
             <input id="stats7" max="100" min="1" type="number" value="92">
             <input id="stats8" max="100" min="1" type="number" value="91">
-             <script>
-      function generateStats() {
-        var ovr = document.getElementById("ovr").value;
-        var stats = document.getElementsByClassName("stat");
-        var total = 0;
-        var count = stats.length;
-        for (var i = 0; i < count; i++) {
-          var min = Math.max(10, Math.floor((ovr - total) / (count - i)));
-          var max = Math.min(99, Math.ceil((ovr - total - (count - i) * 10) / (count - i)));
-          var random = Math.floor(Math.random() * (max - min + 1)) + min;
-          stats[i].value = random;
-          total += random;
-        }
-      }
-    </script>
+           
            </p>
         <p>Ảnh
             <select id="playerID"></select>
