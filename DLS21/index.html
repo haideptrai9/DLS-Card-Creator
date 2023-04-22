@@ -7,21 +7,21 @@
     <meta property="og:title" content="DLS Card Creator">
     <meta property="og:description" content="A card creator for the popular soccer game by First Touch Games.">
     <meta property="og:url" content="https://theshinramen.github.io/DLS-Card-Creator/DLS21/">
-    <title>DLS Card Creator</title>
+    <title>Tạo thẻ DLS</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body onload="drawCard()">
     <header>
-        <h1><a href="/DLS-Card-Creator/">DLS Card Creator</a>
-            <span>by <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">shinramen</a></span>
+        <h1><a href="/DLS-Card-Creator/">Tạo thẻ DLS</a>
+            <span>bởi <a href="https://www.github.com/haideptrai9/DLS-Card-Creator" target="_blank">Haideptrai9</a></span>
         </h1>
     </header>
     <div>
         <canvas id="card" width="458" height="316"></canvas>
     </div>
     <div>
-        <p>Version
+        <p>Phiên bản
             <select id="version" onchange="window.location.assign(`/DLS-Card-Creator/${value}`);">
                 <option value="DLS19">
                     DLS 19
@@ -39,82 +39,82 @@
         </p>
     </div>
     <div id="settings">
-        <p>Name
+        <p>Tên
             <input id="firstName" type="text" value="Lionel">
             <input id="lastName" type="text" value="Messi">
         </p>
-        <p>Card Type
+        <p>Loại thẻ
             <select id="cardType">
                 <option selected value="legendary">
-                    Legendary
+                    Vàng
                 </option>
                 <option value="rare">
-                    Rare
+                    Xanh
                 </option>
                 <option value="common">
-                    Common
+                    Trắng
                 </option>
             </select>
-            Height
+            Chiều Chao
             <input id="height" max="999" min="1" type="number" value="171">
-            Foot
+            Chân
             <select id="footColor">
                 <option value="black">
-                    Black
+                    Đen
                 </option>
                 <option value="white">
-                    White
+                    Trắng
                 </option>
                 <option value="gold">
-                    Gold
+                    Vàng
                 </option>
                 <option value="red">
-                    Red
+                    Đỏ
                 </option>
                 <option selected value="blue">
-                    Blue
+                    Xanh biển
                 </option>
                 <option value="pink">
-                    Pink
+                    Hồng
                 </option>
                 <option value="yellow">
-                    Yellow
+                    Vàng
                 </option>
                 <option value="orange">
-                    Orange
+                    Cam
                 </option>
                 <option value="purple">
-                    Purple
+                    Tím
                 </option>
                 <option value="brown">
-                    Brown
+                    Nâu
                 </option>
                 <option value="green">
-                    Green
+                    Xanh Lá
                 </option>
                 <option value="grey">
-                    Grey
+                    Xám
                 </option>
                 <option value="random">
-                    Random
+                    Ngẫu nhiên
                 </option>
             </select>
             <select id="foot">
                 <option value="R">
-                    Right
+                    Phải
                 </option>
                 <option selected value="L">
-                    Left
+                    Trái
                 </option>
                 <option value="B">
-                    Both
+                    Đôi
                 </option>
             </select>
         </p>
         <p>
-            Overall Rating
+            Ovr
             <input id="rating" max="100" min="1" type="number" value="89">
-            Position
+            Vị trí
             <select id="position">
                 <option value="CF">
                     CF
@@ -150,7 +150,7 @@
                     GK
                 </option>
             </select>
-            Nationality <a href="https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md"
+            Quốc Tịch <a href="https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md"
                 target="_blank"><sup>(?)</sup></a>
             <select id="nationality"></select>
         </p>
@@ -165,7 +165,7 @@
             <input id="stats7" max="100" min="1" type="number" value="93">
             <input id="stats8" max="100" min="1" type="number" value="92">
         </p>
-        <p>Image
+        <p>Ảnh
             <select id="playerID"></select>
             <input accept="image/gif, image/jpeg, image/png" type="file" id="uploadImage" />
             <button type="button" onclick="document.getElementById('uploadImage').click();">Upload image</button>
@@ -175,16 +175,6 @@
     <div id="buttons" style="position: fixed; bottom: 20px; right: 20px;">
         <a href="/DLS-Card-Creator">
             <img src="/DLS-Card-Creator/assets/icon/home.png" style="border-radius: 10px;" height="30px">
-        </a>
-        <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">
-            <img src="/DLS-Card-Creator/assets/icon/github.png" style="border-radius: 10px;" height="30px">
-        </a>
-        <a href="https://discord.gg/uMtYYpGaZB">
-            <img src="/DLS-Card-Creator/assets/icon/discord.png" style="border-radius: 10px;" height="30px">
-        </a>
-        <a href="https://www.buymeacoffee.com/shinramen" target="_blank">
-            <img src="/DLS-Card-Creator/assets/icon/bmac.png" style="border-radius: 10px;" height="30px">
-        </a>
     </div>
 
     <script src="script.js"></script>
