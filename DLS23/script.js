@@ -69,11 +69,11 @@ function drawCard() {
     var ctx = card.getContext('2d');
 
     var sources = {
-        template: `./assets/card/${value('cardType')}${value('position') == 'GK' ? 'GK' : ''}.png`, // ${checked('maxed') ? 'maxed/' : ''}
+        template: `./assets/card/${value('cardType')}${value('position') == 'GK' ? 'GK' : ''}.png`,${checked('maxed') ? 'maxed/' : ''}
         positionImage: `./assets/position/${value('position')}.png`,
         playerImage: `https://raw.githubusercontent.com/theshinramen/DLS-Files/main/playerphotos/DLS23/${value('playerID')}.png`,
         flagImage: `https://raw.githubusercontent.com/theshinramen/DLS-Files/main/flags/${value('nationality')}.png`,
-        // starImage: './assets/card/maxed/star/red.png'
+        starImage: './assets/card/maxed/star/red.png'
     };
 
     if (value('uploadImage') != '') {
@@ -81,7 +81,6 @@ function drawCard() {
         sources.playerImage = URL.createObjectURL(document.getElementById('uploadImage').files[0]);
     }
 
-    /**
     if (checked('maxed')) {
         if (value('rating') > 0 && value('rating') <= 59) {
             sources.starImage = './assets/card/maxed/star/red.png'
@@ -95,15 +94,14 @@ function drawCard() {
             sources.starImage = './assets/card/maxed/star/blue.png'
         }
     }
-    */
 
     loadImages(sources, function (images) {
         ctx.drawImage(images.template, 0, 0);
         ctx.drawImage(images.playerImage, 18, 37, 224, 224);
         ctx.drawImage(images.positionImage, 202, 91);
         ctx.drawImage(images.flagImage, 202, 127, 46, 29);
-        // if (checked('maxed')) ctx.drawImage(images.starImage, 178, 0);
-
+        if (checked('maxed')) ctx.drawImage(images.starImage, 178, 0);
+    });
         // First Name
         ctx.textAlign = 'center'
         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -145,7 +143,7 @@ function drawCard() {
         }
 
         // Rating Circle
-        // if (!checked('maxed')) {
+        if (!checked('maxed')) {
         ctx.beginPath();
         ctx.arc(222, 45, 31, 0, 2 * Math.PI);
         if (value('rating') > 0 && value('rating') <= 59) {
@@ -160,7 +158,7 @@ function drawCard() {
             ctx.fillStyle = '#5797d1';
         }
         ctx.fill();
-        // }
+        }
 
         // Rating
         ctx.fillStyle = '#ffffff';
@@ -170,7 +168,7 @@ function drawCard() {
 
         // Height
         ctx.textAlign = 'left'
-        ctx.fillStyle = /**checked('maxed')**/false && value('cardType') == 'legendary' ? '#ffffff' : '#000000';
+        ctx.fillStyle = checked('maxed') && value('cardType') == 'legendary' ? '#ffffff' : '#000000';
         ctx.font = boldText + '22px Renogare';
         ctx.letterSpacing = '0px';
         ctx.fillText(value('height'), 303, 59);
