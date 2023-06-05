@@ -6,20 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="DLS Card Creator">
     <meta property="og:description" content="A card creator for the popular soccer game by First Touch Games.">
+    <meta property="og:url" content="https://theshinramen.github.io/DLS-Card-Creator/DLS23/">
     <title>DLS Card Creator</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body onload="drawCard()">
     <header>
-        <h1><a href="/DLS-Card-Creator/">Tạo Thẻ DLS</a>
+        <h1><a href="/DLS-Card-Creator/">DLS CARD CREATOR</a>
+            <span>by <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">shinramen</a></span>
         </h1>
     </header>
     <div>
         <canvas id="card" width="458" height="320"></canvas>
     </div>
     <div>
-        <p>Phiên bản
+        <p>Version
             <select id="version" onchange="window.location.assign(`/DLS-Card-Creator/${value}`);">
                 <option value="DLS19">
                     DLS 19
@@ -33,47 +35,48 @@
                 <option selected value="DLS23">
                     DLS 23
                 </option>
+                <option selected value="DLS23">
+                    DLS 23
+                </option>
             </select>
         </p>
     </div>
     <div id="settings">
-        <p>Tên
+        <p>Name
             <input id="firstName" type="text" value="LIONEL">
             <input id="lastName" type="text" value="MESSI">
         </p>
-        <p>Loại thẻ
+        <p>Card Type
             <select id="cardType">
                 <option selected value="legendary">
-                    Vàng
+                    Legendary
                 </option>
                 <option value="rare">
-                    Xanh
+                    Rare
                 </option>
                 <option value="common">
-                    Trắng
+                    Common
                 </option>
             </select>
-            <!--
             Maxed
             <input id="maxed" type="checkbox" onchange="clearCard();">
-            -->
-            Chiều cao
+            Height
             <input id="height" max="999" min="1" type="number" value="170">
-            Chân thuận
+            Foot
             <select id="foot">
                 <option value="R">
-                    Phải
+                    Right
                 </option>
                 <option selected value="L">
-                    Trái
+                    Left
                 </option>
                 <option value="B">
-                    Đôi
+                    Both
                 </option>
             </select>
         </p>
         <p>
-            OVR
+            Overall Rating
             <input id="rating" max="100" min="1" type="number" value="86">
             Position
             <select id="position">
@@ -117,12 +120,12 @@
                     GK
                 </option>
             </select>
-            Quốc Tịch <a href="https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md"
+            Nationality <a href="https://github.com/theshinramen/DLS-Files/blob/main/flags/README.md"
                 target="_blank"><sup>(?)</sup></a>
             <select id="nationality"></select>
         </p>
         <p>
-            Chỉ Số
+            Stats
             <input id="stats1" max="100" min="1" type="number" value="80">
             <input id="stats2" max="100" min="1" type="number" value="87">
             <input id="stats3" max="100" min="1" type="number" value="77">
@@ -140,7 +143,21 @@
             <button type="button" onclick="saveCard();">Save image</button>
         </p>
     </div>
+    <div id="buttons" style="position: fixed; bottom: 20px; right: 20px;">
+        <a href="/DLS-Card-Creator">
+            <img src="/DLS-Card-Creator/assets/icon/home.png" style="border-radius: 10px;" height="30px">
+        </a>
+        <a href="https://www.github.com/theshinramen/DLS-Card-Creator" target="_blank">
+            <img src="/DLS-Card-Creator/assets/icon/github.png" style="border-radius: 10px;" height="30px">
+        </a>
+        <a href="https://discord.gg/uMtYYpGaZB">
+            <img src="/DLS-Card-Creator/assets/icon/discord.png" style="border-radius: 10px;" height="30px">
+        </a>
+        <a href="https://www.buymeacoffee.com/shinramen" target="_blank">
+            <img src="/DLS-Card-Creator/assets/icon/bmac.png" style="border-radius: 10px;" height="30px">
+        </a>
     </div>
+
     <script src="script.js"></script>
 </body>
 
