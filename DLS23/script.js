@@ -95,13 +95,13 @@ function drawCard() {
         }
     }
 
-    loadImages(sources, function (images) {
+   loadImages(sources, function (images) {
         ctx.drawImage(images.template, 0, 0);
         ctx.drawImage(images.playerImage, 18, 37, 224, 224);
         ctx.drawImage(images.positionImage, 202, 91);
         ctx.drawImage(images.flagImage, 202, 127, 46, 29);
         if (checked('maxed')) ctx.drawImage(images.starImage, 178, 0);
-    });
+
         // First Name
         ctx.textAlign = 'center'
         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -144,20 +144,20 @@ function drawCard() {
 
         // Rating Circle
         if (!checked('maxed')) {
-        ctx.beginPath();
-        ctx.arc(222, 45, 31, 0, 2 * Math.PI);
-        if (value('rating') > 0 && value('rating') <= 59) {
-            ctx.fillStyle = '#d0504b';
-        } else if (value('rating') > 59 && value('rating') <= 69) {
-            ctx.fillStyle = '#de8735';
-        } else if (value('rating') > 69 && value('rating') <= 79) {
-            ctx.fillStyle = '#E4C059';
-        } else if (value('rating') > 79 && value('rating') <= 89) {
-            ctx.fillStyle = '#63d041';
-        } else if (value('rating') > 89 && value('rating') <= 100) {
-            ctx.fillStyle = '#5797d1';
-        }
-        ctx.fill();
+            ctx.beginPath();
+            ctx.arc(222, 45, 31, 0, 2 * Math.PI);
+            if (value('rating') > 0 && value('rating') <= 59) {
+                ctx.fillStyle = '#d0504b';
+            } else if (value('rating') > 59 && value('rating') <= 69) {
+                ctx.fillStyle = '#de8735';
+            } else if (value('rating') > 69 && value('rating') <= 79) {
+                ctx.fillStyle = '#E4C059';
+            } else if (value('rating') > 79 && value('rating') <= 89) {
+                ctx.fillStyle = '#63d041';
+            } else if (value('rating') > 89 && value('rating') <= 100) {
+                ctx.fillStyle = '#5797d1';
+            }
+            ctx.fill();
         }
 
         // Rating
@@ -176,7 +176,7 @@ function drawCard() {
         // Foot
         ctx.fillText(value('foot'), 414, 59);
     });
-};
+}
 
 // https://daily-dev-tips.com/posts/vanilla-javascript-save-canvas-as-an-image/
 function saveCard() {
